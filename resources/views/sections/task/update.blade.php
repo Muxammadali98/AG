@@ -264,7 +264,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- modal-dialog-centered - ekran o'rtasiga joylash -->
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ isset($group->title)? $group->title : ''; }}</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">{{ isset($group->title)? $group->title : '' }}</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="display: flex; justify-content: center; align-items: center">

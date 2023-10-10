@@ -28,14 +28,22 @@ class TaskController extends Controller
 
     function store(Request $request) {
         $this->validate($request,[
-            'company_id'=>'required| int | exists:companies,id',
-            'group_id'=>'required| int | exists:groups,id',
+            'group_id'=>'required| int | exists:companies,id',
+            'company_id'=>'required| array ',
             'date'=>'required'
         ],[
             "date.required"=>"Sana kiristish majburiy"
         ]);
 
-        $task = Task::create($request->all());
+
+        foreach ($request->company_id as $item){
+            Company::find($item)->update(['come'=>$request->date]);
+            $task = Task::create([
+                'group_id'=>$request->group_id,
+                'company_id'=>$item,
+                'date'=>$request->date
+            ]);
+        }
         $data = [
             'id'=>$task->group_id,
             'company'=>$task->company,
