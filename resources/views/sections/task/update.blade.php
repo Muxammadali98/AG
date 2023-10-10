@@ -21,7 +21,7 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="/">Bosh sahifa</a>
+                        <a href="{{ route('group.index') }}">Bosh sahifa</a>
                       </li>
                       <li class="breadcrumb-item"><a href="{{ route('task.index') }}">Topshiriqlar</a></li>
                       <li class="breadcrumb-item active" aria-current="page">
@@ -48,7 +48,7 @@
                   <div class="card-style mb-30">
                     <div class="input-style-3" style="display: flex;   justify-content: space-between">
                       <h2>Topshiriqni O'zgartirish</h2>
-                      <button style="padding: 10px 30px" class="main-btn primary-btn btn-hover">Update</button>
+                      <button style="padding: 10px 30px" class="main-btn primary-btn btn-hover">O'zgartirish</button>
                     </div>
                     <div class="row">
                       <div class="col-xxl-4">
@@ -87,10 +87,15 @@
 
                     </div>
                     <div class="row">
-                      <div >
+                      <div class="col-xxl-4" >
 
                         <label for="">Tugatilgan </label>
                         <input {{ $task->status == 1?'checked':'' }} value="1" type="checkbox" name="status">
+                      </div>
+                      <div class="col-xxl-4">
+                                <b> Tashkilot manzili</b>
+                            <label for="">{{ $task->company->address}}</label>
+
                       </div>
                     </div>
 
@@ -259,7 +264,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- modal-dialog-centered - ekran o'rtasiga joylash -->
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ isset($group->title)? $group->title :'' }}</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">{{ isset($group->title)? $group->title : ''; }}</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="display: flex; justify-content: center; align-items: center">

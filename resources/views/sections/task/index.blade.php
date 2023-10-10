@@ -121,7 +121,7 @@
                           <th><h6> Sana</h6></th>
                           <th><h6> Status</h6></th>
 
-                          <th><h6>O'zgartirish </h6></th>
+                          <th><h6>Batafsil </h6></th>
 
                           <th><h6> O'chirish</h6></th>
                         </tr>
@@ -149,7 +149,7 @@
                             </td>
                             <td>
                               @if ($task->status)
-                                <span class="badge bg-secondary">Tugatilgan</span>
+                                <span class="badge bg-success">Tugatilgan</span>
                               @else
                                 <span class="badge bg-warning text-dark">Tugatilmagan</span>
                               @endif
@@ -157,7 +157,7 @@
                             <td>
                               <div class="action">
                                 <a href="{{ route('task.edit', $task->id) }}" class="text-warning fs-5  ">
-                                  <span class="badge rounded-pill bg-success"style="font-size: 14px">O'zgartirish</span>
+                                  <span class="badge rounded-pill primary-btn" style="font-size: 14px">Batafsil</span>
                                 </a>
                               </div>
                             </td>
