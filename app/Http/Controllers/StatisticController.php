@@ -169,10 +169,10 @@ public function generatePDF(Request $request, $id=1)
     }
 
     $data = $data->orderByDesc('clients_count')->get();
-    
+
     $pdf = PDF::loadView('pdf.view', compact('data'));
 
-    return $pdf->download('jadval.pdf');
+    return $pdf->download('Agetation.pdf');
 }
 
 }

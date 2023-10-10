@@ -46,7 +46,7 @@
 
                         <a style="margin: 10px" href="/" style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Guruhlar</a>
                         <a style="margin: 10px" href="/statistic/2" style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Hodimlar</a>
-                        <form style="display: inline-block; margin: 10px"  action="{{ request()->is('/') ? '/download-pdf' : '/download-pdf/2' }}" method="GET" style="display: flex; justify-content: flex-end; flex-direction: column;">
+                        <form style="display: inline-block; margin: 10px"  action="{{ request()->is('/') ? '/download-pdf' : '/download-pdfit/2' }}" method="GET" style="display: flex; justify-content: flex-end; flex-direction: column;">
                               <input type="hidden" name="filter" value="{{ request()->query('filter')}}">
                               <input type="hidden" name="text" value="{{$_GET['text']?? ''}}">
                             <button  style="padding:  15px" class="main-btn primary-btn btn-hover d-flex justify-center align-content-center"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
