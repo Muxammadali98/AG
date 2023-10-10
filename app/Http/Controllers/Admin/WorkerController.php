@@ -79,25 +79,7 @@ class WorkerController extends Controller
     }
 
     function update(Request $request, $id) {
-        $this->validate($request,[
-            'name'=>'required',
-            'username'=>'required | unique:workers,username,'.$id,
-            'surname'=>'required',
-            'address'=>'required',
-            'phone'=>'digits:12|numeric',
-            'city_id'=>'required| int | exists:cities,id',
-        ],
-        [
-            'name.required'=>"Ism mayronini to'ldirish majburiy",
-            'username.required'=>"Foydalanuvchi ismi maydonini to'ldirish majburiy",
-            'username.unique'=>"Foydalanuvchi ismi allaqachon yaratilgan",
-            'surname.required'=>"Faminya maydonini to'ldirish majburiy",
-            'phone.unique'=>"Telefon raqam maydonini to'ldirish majburiy",
-            'phone.digits:12'=>"Telefon raqam maydoniniga 12 ta belgi kiritish kerak",
-            'phone.numeric'=>"Telefon raqam maydoni raqamlardam tashkil topishi kerak",
-            'address.required'=>"Manzil maydonini to'ldirish majburiy",
-            'city_id.required'=>"Shaharni tanlash majburiy",
-        ]);
+
         $worker = Worker::find($id);
 
         $data = $request->all();
@@ -110,7 +92,9 @@ class WorkerController extends Controller
         }else{
             $data['image'] = $worker->image;
         }
-        if(empty($request->password)){
+        if(!empty($request->password)){
+            $data['password']=Hash::make($request->password);
+        }else{
             $data['password']=$worker->password;
         }
 
