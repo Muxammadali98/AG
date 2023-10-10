@@ -70,20 +70,43 @@
                             <td>
                               <p>{{ $status->title }}</p>
                             </td>
-                            <td>
-                              <div class="action">
-                                <a href="{{ route('status.edit', $status->id) }}" class="text-warning fs-5  ">
-                                  <span class="badge rounded-pill bg-success"style="font-size: 14px">O'zgartirish</span>
-                                </a>
-                              </div>
-                              </td>
+                        
+                              @if (is_null($status->deleted_at))
+                              <td>
+                                <div class="action">
+                                  <a href="{{ route('status.edit', $status->id) }}" class="text-warning fs-5">
+                                    <span class="badge rounded-pill bg-success"style="font-size: 14px">O'zgartirish</span>
+                                  </a>
+                                </div>
+                                </td>
+                              @else
+                              <td>
+                                <div class="action">
+                                    <span class="badge rounded-pill bg-secondary"style="font-size: 14px">Ma'lumot o'chirilgan</span>
+                                </div>
+                                </td>
+                              @endif
+                              @if (is_null($status->deleted_at))
                               <td>
                                 <div class="action">
                                     <button onclick = "ochirish(`{{ route('status.destroy', $status->id) }}`)" data-bs-toggle="modal" data-bs-target="#deleteModal" class="text-danger fs-5">
                                         <span class="badge rounded-pill bg-danger" style="font-size: 15px">O'chirish</span>
                                     </button>
-                              </div>
-                            </td>
+                                </div>
+                              </td>
+                              @else
+                              <td>
+                                <div class="action">
+                                  <form action="statusRestore/{{ $status->id }}" method="POST">
+                                    @csrf
+                                    <button  class="text-danger fs-5">
+                                        <span class="badge rounded-pill bg-primary" style="font-size: 15px">Tiklash</span>
+                                    </button>
+                                  </form>
+                                </div>
+                              </td>
+                              @endif
+                    
                           </tr>
                         @endforeach
                         <!-- end table row -->

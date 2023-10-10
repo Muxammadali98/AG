@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/moderation',[WorkerController::class, 'moderation']);
     Route::get('/statistic',[\App\Http\Controllers\StatisticController::class,'index']);
     Route::get('/statistic/{id}',[\App\Http\Controllers\StatisticController::class,'index']);
+    Route::post('/statusRestore/{id}',[StatusController::class, 'restor']);
 });
 
 

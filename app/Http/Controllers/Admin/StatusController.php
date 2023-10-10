@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class StatusController extends Controller
 {
     function index(){
-        $statuses = Status::all();
+        $statuses = Status::withTrashed()->get();
         return view('admin.status.index',compact('statuses'));
     }
 
@@ -56,4 +56,13 @@ class StatusController extends Controller
 
         return redirect()->route('status.index');
     }
+
+
+    function restor($id) {
+        Status::withTrashed()->findOrFail($id)->restore();
+
+        return redirect()->route('status.index');
+    }
+
+
 }
