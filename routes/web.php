@@ -33,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/download-pdf', [\App\Http\Controllers\StatisticController::class, 'generatePDF']);
+    Route::get('/download-pdf/{id}', [\App\Http\Controllers\StatisticController::class, 'generatePDF']);
+
 
     Route::resource('/group',GroupController::class);
     Route::resource('/worker',WorkerController::class);

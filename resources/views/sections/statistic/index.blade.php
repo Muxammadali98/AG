@@ -42,8 +42,19 @@
                     <div class="col-6">
                         <h6 class="mb-10">Statistika Jadvali</h6>
 {{--                        <a href="{{ route('task.create') }}" style="padding: 5px" class="main-btn primary-btn btn-hover">Topshiriq Qo'shish</a>--}}
-                        <a href="/" style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Guruhlar</a>
-                        <a href="/statistic/2" style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Hodimlar</a>
+                        <div class="d-flex align-content-center">
+
+                        <a style="margin: 10px" href="/" style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Guruhlar</a>
+                        <a style="margin: 10px" href="/statistic/2" style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Hodimlar</a>
+                        <form style="display: inline-block; margin: 10px"  action="{{ request()->is('/') ? '/download-pdf' : '/download-pdf/2' }}" method="GET" style="display: flex; justify-content: flex-end; flex-direction: column;">
+                              <input type="hidden" name="filter" value="{{ request()->query('filter')}}">
+                              <input type="hidden" name="text" value="{{$_GET['text']?? ''}}">
+                            <button  style="padding:  15px" class="main-btn primary-btn btn-hover d-flex justify-center align-content-center"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                            </svg> <span style="margin-left: 5px">PDF </span></button>
+                        </form>
+                        </div>
+
                     </div>
 
                     <form class="col-6"  action="{{ request()->is('/') ? '/' : '/statistic/2' }}" method="GET" style="display: flex; justify-content: flex-end; flex-direction: column;">
@@ -83,6 +94,8 @@
                         </div>
 
                     </form>
+
+
 
 
                   </div>
@@ -170,7 +183,6 @@
                     Topshiriq Topilmadi
                   </h2>
                 </div>
-
                 @endif
 
                 </div>
