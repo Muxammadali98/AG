@@ -125,6 +125,7 @@
                                                                  class="form-check-input"
                                                                  type="checkbox"
                                                                  id="checkbox-1"
+                                                                 style="margin: 10px"
                                                           />
                                                       </div>
                                                   </td>
