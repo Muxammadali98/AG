@@ -1,0 +1,14 @@
+[19-Jul-2023 13:03:20 Asia/Tashkent] PHP Warning:  require(/home/orzugran/agetation.orzugrand.uz/vendor/autoload.php): Failed to open stream: No such file or directory in /home/orzugran/agetation.orzugrand.uz/artisan on line 18
+[19-Jul-2023 13:03:20 Asia/Tashkent] PHP Stack trace:
+[19-Jul-2023 13:03:20 Asia/Tashkent] PHP   1. {main}() /home/orzugran/agetation.orzugrand.uz/artisan:0
+[19-Jul-2023 13:03:20 Asia/Tashkent] PHP Fatal error:  Uncaught Error: Failed opening required '/home/orzugran/agetation.orzugrand.uz/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orzugran/agetation.orzugrand.uz/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/orzugran/agetation.orzugrand.uz/artisan on line 18
+[19-Jul-2023 13:03:49 Asia/Tashkent] PHP Warning:  require(/home/orzugran/agetation.orzugrand.uz/vendor/autoload.php): Failed to open stream: No such file or directory in /home/orzugran/agetation.orzugrand.uz/artisan on line 18
+[19-Jul-2023 13:03:49 Asia/Tashkent] PHP Stack trace:
+[19-Jul-2023 13:03:49 Asia/Tashkent] PHP   1. {main}() /home/orzugran/agetation.orzugrand.uz/artisan:0
+[19-Jul-2023 13:03:49 Asia/Tashkent] PHP Fatal error:  Uncaught Error: Failed opening required '/home/orzugran/agetation.orzugrand.uz/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orzugran/agetation.orzugrand.uz/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/orzugran/agetation.orzugrand.uz/artisan on line 18
