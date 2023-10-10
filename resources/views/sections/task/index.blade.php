@@ -100,7 +100,7 @@
                                 <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"></path>
                               </svg>
                             </a>
-                            <button style="padding: 10px 30px" class="main-btn primary-btn btn-hover">Saralash</button>
+                            <button style="padding: 10px 10px" class="main-btn primary-btn btn-hover">Saralash</button>
                           </div>
 
 
